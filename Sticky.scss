@@ -1,0 +1,30 @@
+.sticky {
+	$parent: &;
+
+	&__item {
+		margin: 20px 0;
+		position: sticky;
+		top: 40px;
+
+		padding: 50px;
+		border-radius: var(--radius-lg);
+
+		transform: translateZ(0);
+		will-change: transform, opacity;
+		opacity: 1;
+
+		background: var(--clr-primary);
+		color: #fff;
+		box-shadow: 4px 12px 40px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		height: 50vh;
+		text-align: center;
+		width: 100%;
+		justify-content: center;
+		flex-direction: column;
+	}
+}
