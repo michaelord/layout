@@ -1,13 +1,13 @@
-import * as React from 'react';
-import {useEffect} from 'react';
-
+import React, {useEffect} from 'react';
 import './Sticky.scss';
 
-type SticktProps = {
-	children?: React.ReactNode;
+import * as Types from 'components/types';
+
+type StickyProps = {
+	children?: Types.Children;
 };
 
-export const Sticky = (props: SticktProps): React.ReactNode => {
+export const Sticky = (props: StickyProps) => {
 	const base: string = 'sticky';
 	const {children} = props;
 
@@ -29,7 +29,7 @@ export const Sticky = (props: SticktProps): React.ReactNode => {
 			// is sticking
 			if (bounds.top <= offset) {
 				// loop through all the children
-				items.forEach((item, index) => {
+				items.forEach((item: any, index: number) => {
 					if (index > 0) {
 						const vpo = item.getBoundingClientRect();
 						const prevVpo = items[index - 1].getBoundingClientRect();

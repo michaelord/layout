@@ -1,0 +1,44 @@
+.flex {
+	$parent: &;
+
+	display: flex;
+	margin-left: calc(var(--grid-gap, 1em) * -1);
+
+	> * {
+		flex-grow: 1;
+
+		margin: 0 0 0 var(--grid-gap, 1em);
+	}
+
+	&--wrap {
+		flex-wrap: wrap;
+		margin-bottom: calc(var(--grid-gap, 1em) * -1);
+
+		> * {
+			margin-bottom: var(--grid-gap, 1em);
+		}
+	}
+
+	/*
+	&:not(:last-child) {
+		margin-bottom: var(--grid-gap);
+	}
+
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+	> * {
+		margin: 0 !important;
+	}
+
+	&--xs {
+		grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	}
+	&--sm {
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	}
+
+	&--lg {
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	}
+	*/
+}

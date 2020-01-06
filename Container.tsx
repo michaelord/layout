@@ -1,14 +1,13 @@
-import * as React from 'react';
-
-import './Container.scss';
-
 import {getModifiers} from 'components/libs';
 
-import {Size} from 'components/types';
+import React from 'react';
+import './Container.scss';
+
+import * as Types from 'components/types';
 
 type ContainerProps = {
-	children: React.ReactNode;
-	width?: Size;
+	children: Types.Children;
+	width?: Types.Size;
 };
 
 export const Container = (props: ContainerProps) => {

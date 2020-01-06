@@ -1,9 +1,11 @@
-import * as React from 'react';
-import {useState, useEffect} from 'react';
+import React from 'react';
+import {useEffect, useState} from 'react';
+
+import * as Types from 'components/types';
 
 type MatchMediaProps = {
-	children: React.ReactNode;
-	fallback: React.ReactNode;
+	children: Types.Children;
+	fallback: Types.Children;
 	query?: string;
 };
 

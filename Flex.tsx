@@ -1,36 +1,31 @@
 import {getModifiers} from 'components/libs';
-
+import {Size} from 'components/types';
 import React from 'react';
-import './Grid.scss';
+import './Flex.scss';
 
 import * as Types from 'components/types';
 
-type GridProps = {
+type FlexProps = {
+	wrap?: boolean;
 	children: Types.Children;
-	size?: Types.Size;
-
-	columns?: number;
+	size?: Size;
 };
 
-export const Grid = (props: GridProps) => {
-	const {children, size = 'default', columns = 'auto-fit'} = props;
+export const Flex = (props: FlexProps) => {
+	const {children, size = 'default', wrap} = props;
 
 	if (!children || React.Children.count(children) === 0) {
 		return null;
 	}
 
-	const base: string = 'grid';
-
-	const style = {
-		'--columns': `${columns}`,
-	} as React.CSSProperties;
+	const base: string = 'flex';
 
 	const atts: object = {
 		className: getModifiers(base, {
+			wrap,
 			items: `items-${React.Children.count(children)}`,
 			size,
 		}),
-		// style
 	};
 
 	return <div {...atts}>{children}</div>;
